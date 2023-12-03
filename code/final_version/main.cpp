@@ -27,6 +27,7 @@ int main() {
         else
         {
             std::cout << "Error, Invalid Expression" << std::endl;
+            result = "1";
         }
        
     }
