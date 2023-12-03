@@ -9,4 +9,5 @@ clean:
 	rm -f my_calculator
 	rm -f *~
 
-
+run:
+	./my_calculator
