@@ -275,7 +275,7 @@ void tokenize(const std::string& s, MyVector<std::string>& tokens) {
             return (std::stod(myOperands.top()));
         }
 
-        return std::numeric_limits<double>::quiet_NaN();
+        return NULL;
             
         //return (myOperands.top());
     }
