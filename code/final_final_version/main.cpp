@@ -15,7 +15,7 @@ int main() {
 
     while (expression != "0")
     {
-    std::cout << "Enter expression to evaluate: ";
+    std::cout << "Enter expression to evaluate (enter '0' to exit): ";
     std::getline(std::cin, expression);
     double result = calculator.calculate(expression);
     //std::string result = calculator.calculate(expression);
