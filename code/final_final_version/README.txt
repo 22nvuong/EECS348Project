@@ -12,6 +12,6 @@ Examples of expressions to enter can include:
 If the expression is valid, then the program will output "Result: {result}".
 If the expression is invalid, then the program will output "Error, Invalid Expression".
 
-The program will continually ask the user to enter an expression until they enter "0".
 To exit the program, enter "0".
+Otherwise, the program will continually ask the user to enter an expression until they enter "0".
 
