@@ -116,7 +116,7 @@ class MyInfixCalculator{
                 {
                     //std::cout << "Error: Divide by 0" << std::endl;
 
-                    return std::numeric_limits<double>::quiet_NaN();
+                    return NULL;
                 }
                 else{
                     return o1 / o2; 
