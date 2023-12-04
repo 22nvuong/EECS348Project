@@ -28,7 +28,6 @@ class MyInfixCalculator{
         // code begins
         if (!isParenthesesBalanced(s))
         {
-            invalid = "Error: Unbalanced Parentheses";
             return 0.0;
         }
         invalid = "";
