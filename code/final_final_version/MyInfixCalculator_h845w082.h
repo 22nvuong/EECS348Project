@@ -30,6 +30,12 @@ class MyInfixCalculator{
         {
             return 0.0;
         }
+
+        if (isValidExpression(s))
+        {
+            return 0.0;
+        }
+
         invalid = "";
         MyVector<std::string> infix;
         MyVector<std::string> postfix;
@@ -51,7 +57,6 @@ class MyInfixCalculator{
     {
         switch(c)
         {
-
             case '^':
                 return 4;
             case '*':
@@ -69,23 +74,26 @@ class MyInfixCalculator{
         }
     }
 
+    // checks if the parentheses are balanced
     bool isParenthesesBalanced(const std::string& s)
     {
         int count = 0;
 
-        for (char c : s)
+        for (size_t i = 0; i < s.length(); ++i)
         {
+            // retrieves character at index i in string s
+            char c = s[i];
             if (c == '(')
                 count++;
             else if (c == ')')
             {
                 if (count == 0)
-                    return false; // nnbalanced closing parenthesis
+                    return false; // Unbalanced closing parenthesis
                 count--;
             }
         }
 
-        return count == 0; // check if all opening parentheses are closed
+        return count == 0; // Check if all opening parentheses are closed
     }
 
     // checks if a character corresponds to a valid parenthesis
@@ -100,6 +108,32 @@ class MyInfixCalculator{
             default:
                 return false;
         }
+    }
+
+    // checks if it is a valid expression with a 2 operands and an operator connecting them
+    bool isValidExpression(const std::string& s)
+    {
+        MyVector<std::string> infix;
+        tokenize(s, infix);
+
+        int operandCount = 0;
+        int operatorCount = 0;
+
+        for (size_t i = 0; i < infix.size(); ++i)
+        {
+            // retrieves element at index i
+            const std::string& token = infix[i];
+            if (isOperator(token[0]))
+            {
+                operatorCount++;
+            }
+            else
+            {
+                operandCount++;
+            }
+        }
+
+        return (operandCount <= operatorCount); // check if there are operators without enough operands
     }
 
     // checks if a character corresponds to a valid digit
