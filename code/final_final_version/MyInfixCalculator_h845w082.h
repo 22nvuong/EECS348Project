@@ -81,12 +81,12 @@ class MyInfixCalculator{
             else if (c == ')')
             {
                 if (count == 0)
-                    return false; // Unbalanced closing parenthesis
+                    return false; // nnbalanced closing parenthesis
                 count--;
             }
         }
 
-        return count == 0; // Check if all opening parentheses are closed
+        return count == 0; // check if all opening parentheses are closed
     }
 
     // checks if a character corresponds to a valid parenthesis
