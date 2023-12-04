@@ -26,6 +26,11 @@ class MyInfixCalculator{
     double calculate(const std::string& s)
     {
         // code begins
+        if (!isParenthesesBalanced(s))
+        {
+            invalid = "Error: Unbalanced Parentheses";
+            return 0.0;
+        }
         invalid = "";
         MyVector<std::string> infix;
         MyVector<std::string> postfix;
@@ -63,6 +68,25 @@ class MyInfixCalculator{
             default:
                 return -1;
         }
+    }
+
+    bool isParenthesesBalanced(const std::string& s)
+    {
+        int count = 0;
+
+        for (char c : s)
+        {
+            if (c == '(')
+                count++;
+            else if (c == ')')
+            {
+                if (count == 0)
+                    return false; // Unbalanced closing parenthesis
+                count--;
+            }
+        }
+
+        return count == 0; // Check if all opening parentheses are closed
     }
 
     // checks if a character corresponds to a valid parenthesis
